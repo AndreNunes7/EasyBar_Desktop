@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "electron .",
-    "build:css": "tailwindcss -i ./css/styles.css -o ./dist/output.css --watch"
+    "dev": "electron ."
   },
   "keywords": [],
   "author": "",
