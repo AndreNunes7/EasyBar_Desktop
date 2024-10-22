@@ -10,7 +10,6 @@ app.on("ready", ()=>{
         height:400
 
 
-
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`)
