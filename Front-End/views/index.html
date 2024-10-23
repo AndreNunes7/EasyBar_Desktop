@@ -5,20 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBar</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        header {
-            background: linear-gradient(90deg, #007bff, #6610f2);
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <header class="text-white">
@@ -35,9 +23,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="openAboutWindow()">Sobre</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="openContactWindow()">Contato</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -48,44 +33,18 @@
     </header>
     
     <main class="container my-5">
-        <h2 class="text-center mb-4">Nossos Pratos</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Prato 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Prato 1</h5>
-                        <p class="card-text">Descrição do prato 1. Um prato delicioso que combina sabor e frescor.</p>
-                        <p class="font-weight-bold">R$ 29,90</p>
-                        <button class="btn btn-primary">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Prato 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Prato 2</h5>
-                        <p class="card-text">Descrição do prato 2. Uma opção perfeita para quem ama sabores intensos.</p>
-                        <p class="font-weight-bold">R$ 39,90</p>
-                        <button class="btn btn-primary">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Prato 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Prato 3</h5>
-                        <p class="card-text">Descrição do prato 3. Um prato que vai surpreender seu paladar.</p>
-                        <p class="font-weight-bold">R$ 24,90</p>
-                        <button class="btn btn-primary">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
+        <h2 class="text-center mb-4">Categorias</h2>
+        <div class="text-center mb-4">
+            <button class="btn btn-secondary" onclick="filterDishes('todas')">Todas</button>
+            <button class="btn btn-secondary" onclick="filterDishes('bebidas')">Bebidas</button>
+            <button class="btn btn-secondary" onclick="filterDishes('fritos')">Fritos</button>
+            <button class="btn btn-secondary" onclick="filterDishes('salgados')">Salgados</button>
         </div>
+    
+        <h2 class="text-center mb-4">Nossos Pratos</h2>
+        <div class="row" id="menu"></div>
     </main>
-
+    
     <footer class="text-center py-3">
         <p>&copy; 2024 EasyBar. Todos os direitos reservados.</p>
     </footer>
@@ -93,17 +52,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Funções para abrir janelas (serão chamadas pelo menu)
-        function openAboutWindow() {
-            const { ipcRenderer } = require('electron');
-            ipcRenderer.send('open-about-window');
-        }
-
-        function openContactWindow() {
-            const { ipcRenderer } = require('electron');
-            ipcRenderer.send('open-contact-window');
-        }
-    </script>
+    <script src="../js/render.js"></script>
 </body>
 </html>
