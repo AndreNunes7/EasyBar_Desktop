@@ -55,38 +55,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/render.js"></script>
-    <script>
-        // Funções do carrinho
-        function openCart() {
-            document.getElementById('cart').style.width = '300px';
-            renderCartItems();
-        }
-
-        function closeCart() {
-            document.getElementById('cart').style.width = '0';
-        }
-
-        function renderCartItems() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            cartItemsContainer.innerHTML = ''; // Limpa itens existentes
-            cart.forEach(item => {
-                const itemDiv = `<div>${item.name} - R$ ${item.price.toFixed(2)}</div>`;
-                cartItemsContainer.innerHTML += itemDiv;
-            });
-            updateTotalPrice();
-        }
-
-        function updateTotalPrice() {
-            const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
-        }
-
-        function confirmPurchase() {
-            alert("Compra confirmada!");
-            cart = []; // Limpa o carrinho
-            closeCart();
-            renderCartItems(); // Atualiza a visualização
-        }
-    </script>
+    <script src="../js/carrinho.js"></script>
+    
 </body>
 </html>
