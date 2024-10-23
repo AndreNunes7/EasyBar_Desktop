@@ -20,3 +20,36 @@ footer {
 .btn-secondary {
     margin: 5px;
 }
+
+.cart-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #007bff;
+    color: white;
+}
+
+.cart-items {
+    padding: 16px;
+    overflow-y: auto;
+    height: calc(100% - 100px); /* Ajuste a altura conforme necessário */
+}
+
+.cart-footer {
+    padding: 16px;
+    text-align: center;
+}
+

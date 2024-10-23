@@ -5,33 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBar</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header class="text-white">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#"><i class="fas fa-shopping-cart"></i></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="openAboutWindow()">Sobre</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand" href="#" onclick="openCart()">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
         </nav>
         <div class="text-center py-5">
             <h1 class="display-4">Bem-vindo ao EasyBar</h1>
-            <p class="lead">Seu sistema de gerenciamento de restaurante.</p>
+            <p class="lead">Seu sistema de pedidos do restaurante.</p>
         </div>
     </header>
-    
+
     <main class="container my-5">
         <h2 class="text-center mb-4">Categorias</h2>
         <div class="text-center mb-4">
@@ -40,18 +29,33 @@
             <button class="btn btn-secondary" onclick="filterDishes('fritos')">Fritos</button>
             <button class="btn btn-secondary" onclick="filterDishes('salgados')">Salgados</button>
         </div>
-    
+
         <h2 class="text-center mb-4">Nossos Pratos</h2>
         <div class="row" id="menu"></div>
     </main>
-    
+
     <footer class="text-center py-3">
         <p>&copy; 2024 EasyBar. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Carrinho -->
+    <div id="cart" class="cart-container">
+        <div class="cart-header">
+            <h5>Carrinho</h5>
+            <button class="close" onclick="closeCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <h6>Total: R$ <span id="total-price">0.00</span></h6>
+            <button class="btn btn-success" onclick="confirmPurchase()">Confirmar Compra</button>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/render.js"></script>
+    <script src="../js/carrinho.js"></script>
+    
 </body>
 </html>
