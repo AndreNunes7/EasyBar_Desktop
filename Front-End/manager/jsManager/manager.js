@@ -3,7 +3,7 @@ let dishes = [];
 // Função para listar pratos na tabela
 function listDishes() {
     const tableBody = document.getElementById('dish-list');
-    tableBody.innerHTML = ''; // Limpa o conteúdo atual
+    tableBody.innerHTML = ''; 
 
     dishes.forEach(dish => {
         const row = `
@@ -30,15 +30,15 @@ function addDish() {
 
     if (name && !isNaN(price) && category) {
         const newDish = {
-            id: dishes.length + 1, // Simulação de ID
+            id: dishes.length + 1, 
             name,
             price,
             category
         };
         dishes.push(newDish);
-        listDishes(); // Atualiza a lista
-        $('#addDishModal').modal('hide'); // Fecha o modal
-        document.getElementById('add-dish-form').reset(); // Reseta o formulário
+        listDishes(); 
+        $('#addDishModal').modal('hide'); 
+        document.getElementById('add-dish-form').reset();
     } else {
         alert("Por favor, preencha todos os campos corretamente.");
     }
@@ -56,7 +56,7 @@ function editDish(id) {
             dish.name = newName;
             dish.price = newPrice;
             dish.category = newCategory;
-            listDishes(); // Atualiza a lista
+            listDishes(); 
         }
     }
 }
@@ -64,16 +64,16 @@ function editDish(id) {
 // Função para remover um prato
 function removeDish(id) {
     dishes = dishes.filter(d => d.id !== id);
-    listDishes(); // Atualiza a lista
+    listDishes(); 
 }
 
 // Exemplo de inicialização
 function init() {
-    // Adiciona dados de exemplo (substitua por dados reais)
+    
     dishes.push({ id: 1, name: "Suco de Laranja", price: 5.90, category: "bebidas" });
     dishes.push({ id: 2, name: "Batata Frita", price: 12.90, category: "fritos" });
     listDishes();
 }
 
-// Chama a função de inicialização ao carregar o script
+
 init();

@@ -8,7 +8,7 @@ let cart = [];
 
 function renderMenu(filteredDishes) {
     const menu = document.getElementById('menu');
-    menu.innerHTML = ''; // Limpa o menu atual
+    menu.innerHTML = ''; 
     filteredDishes.forEach(dish => {
         const card = `
             <div class="col-md-4 mb-4">
@@ -42,7 +42,7 @@ function removeFromCart(index) {
 
 function renderCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; // Limpa itens existentes
+    cartItemsContainer.innerHTML = ''; 
     cart.forEach((item, index) => {
         const itemDiv = `
             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -62,9 +62,9 @@ function updateTotalPrice() {
 
 function confirmPurchase() {
     alert("Compra confirmada!");
-    cart = []; // Limpa o carrinho
+    cart = []; 
     closeCart();
-    renderCartItems(); // Atualiza a visualização
+    renderCartItems();
 }
 
 // Função para filtrar pratos por categoria
@@ -77,5 +77,5 @@ function filterDishes(category) {
     }
 }
 
-// Chame renderMenu inicialmente com todos os pratos
+
 renderMenu(dishes);
