@@ -11,7 +11,7 @@
 
         function renderCartItems() {
             const cartItemsContainer = document.getElementById('cart-items');
-            cartItemsContainer.innerHTML = ''; // Limpa itens existentes
+            cartItemsContainer.innerHTML = '';
             cart.forEach(item => {
                 const itemDiv = `<div>${item.name} - R$ ${item.price.toFixed(2)}</div>`;
                 cartItemsContainer.innerHTML += itemDiv;
@@ -26,8 +26,8 @@
 
         function confirmPurchase() {
             alert("Compra confirmada!");
-            cart = []; // Limpa o carrinho
+            cart = [];
             closeCart();
-            renderCartItems(); // Atualiza a visualização
+            renderCartItems(); 
         }
    
